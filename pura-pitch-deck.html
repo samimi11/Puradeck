@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="slides-format" content="viewport">
+<title>Pura™ — Investor Pitch Deck 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+@theme {
+  --color-bg: #0a1209;
+  --color-bg-deep: #060c07;
+  --color-surface: #121e14;
+  --color-text: #F5F0E8;
+  --color-text-secondary: #C8D5C0;
+  --color-text-muted: #7A9A80;
+  --color-accent-1: #52B788;
+  --color-accent-2: #B7E4C7;
+  --color-accent-3: #C9974A;
+  --color-glass-bg: rgba(255,255,255,0.05);
+  --color-glass-border: rgba(82,183,136,0.18);
+  --color-vignette: rgba(0,0,0,0.55);
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+</style>
+<style>
+:root{--color-bg:#0a1209;--color-text:#F5F0E8;--glow-color-rgb:82,183,136;}
+*,*::before,*::after{box-sizing:border-box;}
+html,body{background:var(--color-bg);margin:0;}
+body{font-family:'DM Sans',sans-serif;color:var(--color-text);overflow:hidden;height:100vh;width:100vw;}
+.deck{width:100vw;height:100vh;position:relative;}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;background:var(--color-bg);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:scale(0.95);transition:opacity 0.7s ease,transform 0.7s ease;pointer-events:none;overflow:hidden;}
+.slide.active{opacity:1;transform:scale(1);pointer-events:all;}
+.slide>.content{position:relative;z-index:2;width:100%;max-width:1140px;padding:clamp(1.2rem,3vw,3.2rem);}
+.nav-controls{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;z-index:100;background:rgba(10,18,9,0.8);backdrop-filter:blur(12px);padding:8px 22px;border-radius:40px;border:1px solid rgba(82,183,136,0.2);}
+.nav-btn{width:38px;height:38px;border:none;background:rgba(82,183,136,0.1);color:#52B788;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.3s;}
+.nav-btn:hover{background:rgba(82,183,136,0.2);}
+.slide-dots{display:flex;gap:6px;flex-wrap:wrap;max-width:280px;justify-content:center;}
+.slide-dots .dot{width:8px;height:8px;border-radius:50%;background:rgba(82,183,136,0.2);cursor:pointer;transition:background 0.3s,transform 0.3s;}
+.slide-dots .dot.active{background:#52B788;transform:scale(1.3);}
+.slide-counter{font-size:0.75rem;color:#7A9A80;min-width:38px;text-align:center;}
+.reveal{opacity:0;transform:translateY(18px);}
+@keyframes float-slow{0%{transform:translate(0,0) scale(1);}25%{transform:translate(55px,-45px) scale(1.1);}50%{transform:translate(-35px,38px) scale(0.92);}75%{transform:translate(45px,18px) scale(1.07);}100%{transform:translate(0,0) scale(1);}}
+@keyframes float-drift{0%{transform:translate(0,0) scale(1) rotate(0deg);}33%{transform:translate(-45px,-55px) scale(1.13) rotate(2deg);}66%{transform:translate(38px,28px) scale(0.9) rotate(-2deg);}100%{transform:translate(0,0) scale(1) rotate(0deg);}}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.gradient-mesh{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);animation:float-slow 10s ease-in-out infinite;}
+.blob:nth-child(2){animation:float-drift 14s ease-in-out infinite;}
+.blob:nth-child(3){animation:float-slow 18s ease-in-out infinite reverse;}
+.slide::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");background-repeat:repeat;background-size:256px 256px;opacity:0.025;mix-blend-mode:overlay;}
+.slide::after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 50%,var(--color-vignette) 100%);}
+.text-glow{text-shadow:0 0 20px rgba(82,183,136,0.5),0 0 40px rgba(82,183,136,0.2);}
+.stat-glow{text-shadow:0 0 30px rgba(82,183,136,0.6),0 0 60px rgba(82,183,136,0.25);}
+@keyframes glow-pulse{0%,100%{text-shadow:0 0 20px rgba(82,183,136,0.5),0 0 40px rgba(82,183,136,0.2);}50%{text-shadow:0 0 30px rgba(82,183,136,0.8),0 0 60px rgba(82,183,136,0.3);}}
+.glow-pulse{animation:glow-pulse 3s ease-in-out infinite;}
+.bar-fill{height:100%;border-radius:4px;transition:width 0.8s ease;}
+.bar-track{background:rgba(82,183,136,0.08);border-radius:4px;overflow:hidden;}
+.card{background:rgba(255,255,255,0.04);border:1px solid rgba(82,183,136,0.15);border-radius:14px;padding:1.4rem 1.6rem;transition:transform 0.25s ease,box-shadow 0.25s ease;}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(82,183,136,0.12);}
+.card-gold{border-color:rgba(201,151,74,0.25);}
+.card-mint{border-color:rgba(183,228,199,0.25);}
+.eyebrow{font-size:0.62rem;letter-spacing:0.14em;font-weight:700;color:#52B788;text-transform:uppercase;margin-bottom:0.35rem;}
+.slide-heading{font-family:'DM Serif Display',serif;font-size:clamp(1.55rem,3.2vw,2.4rem);font-weight:400;color:#F5F0E8;line-height:1.2;margin-bottom:1rem;}
+.accent-bar{height:3px;width:48px;border-radius:2px;background:linear-gradient(90deg,#52B788,#B7E4C7);margin-bottom:0.8rem;}
+table.comp-table{width:100%;border-collapse:collapse;font-size:0.72rem;}
+table.comp-table th{background:#1B4332;color:#52B788;font-weight:700;padding:0.45rem 0.6rem;text-align:left;font-size:0.65rem;letter-spacing:0.06em;text-transform:uppercase;}
+table.comp-table td{padding:0.4rem 0.6rem;border-bottom:1px solid rgba(82,183,136,0.07);}
+table.comp-table tr:nth-child(even) td{background:rgba(255,255,255,0.015);}
+table.comp-table tr:first-child td{background:rgba(82,183,136,0.07);font-weight:600;}
+.tick{color:#52B788;font-weight:700;}
+.cross{color:#e57373;}
+.partial{color:#C9974A;}
+.timeline-item{display:flex;gap:1.2rem;margin-bottom:0.9rem;align-items:flex-start;}
+.timeline-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.timeline-line{width:2px;background:linear-gradient(180deg,#52B788,#B7E4C7,#C9974A,rgba(82,183,136,0.15));position:absolute;left:5px;top:16px;bottom:0;border-radius:2px;}
+.swatch{width:32px;height:32px;border-radius:6px;display:inline-block;border:1px solid rgba(255,255,255,0.1);}
+</style>
+</head>
+<body>
+<div class="mouse-spotlight" style="position:fixed;inset:0;z-index:99;pointer-events:none;"></div>
+<div class="deck">
+
+<!-- SLIDE 1: TITLE -->
+<div class="slide active" data-slide="1" style="background:#060c07;">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:500px;height:500px;top:-80px;right:-80px;background:#1B4332;opacity:0.35;"></div>
+    <div class="blob" style="width:320px;height:320px;bottom:-60px;left:-60px;background:#52B788;opacity:0.12;"></div>
+    <div class="blob" style="width:240px;height:240px;top:42%;left:12%;background:#C9974A;opacity:0.08;"></div>
+  </div>
+  <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1;"></canvas>
+  <div class="content text-center" style="z-index:2;">
+    <div class="reveal" style="font-size:clamp(3.5rem,8vw,6.5rem);font-family:'DM Serif Display',serif;background:linear-gradient(135deg,#52B788,#B7E4C7,#52B788);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.3rem;letter-spacing:-0.02em;">Pura™</div>
+    <div class="reveal" style="font-size:clamp(0.9rem,1.6vw,1.25rem);color:#7A9A80;letter-spacing:0.22em;text-transform:uppercase;margin-bottom:2.2rem;">Pure Origins · Vibrant Living</div>
+    <div class="reveal" style="display:flex;justify-content:center;gap:1.2rem;margin-bottom:2.4rem;flex-wrap:wrap;">
+      <span style="background:rgba(82,183,136,0.1);border:1px solid rgba(82,183,136,0.25);border-radius:40px;padding:0.45rem 1.1rem;font-size:0.85rem;color:#B7E4C7;">🇦🇺 Australia</span>
+      <span style="background:rgba(183,228,199,0.08);border:1px solid rgba(183,228,199,0.2);border-radius:40px;padding:0.45rem 1.1rem;font-size:0.85rem;color:#B7E4C7;">🇳🇿 New Zealand</span>
+      <span style="background:rgba(201,151,74,0.1);border:1px solid rgba(201,151,74,0.25);border-radius:40px;padding:0.45rem 1.1rem;font-size:0.85rem;color:#C9974A;">🇨🇦 Canada</span>
+    </div>
+    <div class="reveal" style="font-size:0.8rem;color:#7A9A80;letter-spacing:0.12em;text-transform:uppercase;">Singapore's Premium Pacific Rim Wellness Destination · Series Seed · May 2026</div>
+  </div>
+</div>
+
+<!-- SLIDE 2: THE PROBLEM -->
+<div class="slide" data-slide="2">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:350px;height:350px;top:-60px;right:-60px;background:#52B788;opacity:0.07;"></div>
+    <div class="blob" style="width:250px;height:250px;bottom:-50px;left:-40px;background:#1B4332;opacity:0.1;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">The Problem</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Singapore's wellness shoppers have<br>nowhere curated to turn</div>
+    <div class="grid grid-cols-2 gap-4 reveal">
+      <div class="card">
+        <div style="font-size:1.4rem;margin-bottom:0.4rem;">🔍</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#52B788;margin-bottom:0.4rem;">No Trusted Curator</div>
+        <div style="font-size:0.78rem;color:#C8D5C0;line-height:1.6;">Shopee & Lazada removed 7,000+ fake health listings in 2024. No reliable, authenticated source for AU/NZ/CA wellness products in SG.</div>
+      </div>
+      <div class="card card-gold">
+        <div style="font-size:1.4rem;margin-bottom:0.4rem;">🌏</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#C9974A;margin-bottom:0.4rem;">Fragmented Market</div>
+        <div style="font-size:0.78rem;color:#C8D5C0;line-height:1.6;">AU brands scattered across AHW (AU-only), iHerb (30K-SKU mass catalogue) and pharmacy chains. No origin curation or brand identity.</div>
+      </div>
+      <div class="card card-mint">
+        <div style="font-size:1.4rem;margin-bottom:0.4rem;">🇳🇿</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#B7E4C7;margin-bottom:0.4rem;">NZ & Canada Invisible</div>
+        <div style="font-size:0.78rem;color:#C8D5C0;line-height:1.6;">Zero dedicated Singapore retail for Trilogy, Antipodes, Mānuka Health, or Canadian wellness leaders — despite strong premium cachet across Asia.</div>
+      </div>
+      <div class="card">
+        <div style="font-size:1.4rem;margin-bottom:0.4rem;">💳</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#52B788;margin-bottom:0.4rem;">Friction at Checkout</div>
+        <div style="font-size:0.78rem;color:#C8D5C0;line-height:1.6;">International sites: no PayNow, GrabPay or NETS. No SGD pricing. 7–21 day shipping. No Singapore customer service or easy returns.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: THE SOLUTION -->
+<div class="slide" data-slide="3">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:380px;height:380px;top:-70px;left:-70px;background:#52B788;opacity:0.08;"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-50px;right:-40px;background:#C9974A;opacity:0.07;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">The Solution</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Pura™ — Singapore's curated Pacific Rim wellness destination</div>
+    <div class="reveal" style="font-size:0.82rem;color:#7A9A80;margin-bottom:1.3rem;line-height:1.7;">The only e-commerce platform in Singapore exclusively curating authenticated health, beauty and wellness products from Australia, New Zealand and Canada — with a Singapore-native checkout experience.</div>
+    <div class="grid grid-cols-3 gap-5 reveal">
+      <div class="card text-center">
+        <div style="font-size:2.2rem;margin-bottom:0.7rem;">🌿</div>
+        <div style="font-size:0.92rem;font-weight:700;color:#52B788;margin-bottom:0.5rem;">Curated Range</div>
+        <div style="font-size:0.76rem;color:#C8D5C0;line-height:1.6;">Hand-picked SKUs across skincare, supplements, sun care, baby & hair from 🇦🇺🇳🇿🇨🇦 — only authentic, certified brands with full provenance.</div>
+      </div>
+      <div class="card card-gold text-center">
+        <div style="font-size:2.2rem;margin-bottom:0.7rem;">🇸🇬</div>
+        <div style="font-size:0.92rem;font-weight:700;color:#C9974A;margin-bottom:0.5rem;">Singapore-First</div>
+        <div style="font-size:0.76rem;color:#C8D5C0;line-height:1.6;">SGD pricing, PayNow, GrabPay, NETS. Local 3PL warehouse. 2-day delivery. Bilingual EN/ZH customer support. Zero import hassle.</div>
+      </div>
+      <div class="card card-mint text-center">
+        <div style="font-size:2.2rem;margin-bottom:0.7rem;">✨</div>
+        <div style="font-size:0.92rem;font-weight:700;color:#B7E4C7;margin-bottom:0.5rem;">Brand Experience</div>
+        <div style="font-size:0.76rem;color:#C8D5C0;line-height:1.6;">Origin storytelling, editorial wellness content, loyalty programme, and subscription boxes — building a community, not just transactions.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 4: MARKET OPPORTUNITY -->
+<div class="slide" data-slide="4">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:400px;height:400px;top:-80px;right:-80px;background:#52B788;opacity:0.07;"></div>
+    <div class="blob" style="width:280px;height:280px;bottom:-60px;left:-50px;background:#1B4332;opacity:0.12;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Market Opportunity</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">A USD 18.8B market expanding at 9.5% CAGR</div>
+    <div class="grid grid-cols-4 gap-4 mb-5 reveal">
+      <div class="card text-center"><div class="stat-glow glow-pulse" style="font-size:1.6rem;font-weight:800;color:#52B788;" data-count="18">0</div><div style="font-size:0.62rem;color:#7A9A80;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">USD Billion<br>SG Wellness 2025</div></div>
+      <div class="card card-gold text-center"><div class="stat-glow" style="font-size:1.6rem;font-weight:800;color:#C9974A;">9.5%</div><div style="font-size:0.62rem;color:#7A9A80;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">CAGR<br>to 2034</div></div>
+      <div class="card card-mint text-center"><div class="stat-glow" style="font-size:1.6rem;font-weight:800;color:#B7E4C7;">58.8%</div><div style="font-size:0.62rem;color:#7A9A80;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">E-commerce<br>Penetration</div></div>
+      <div class="card text-center"><div class="stat-glow" style="font-size:1.6rem;font-weight:800;color:#52B788;">$1,445</div><div style="font-size:0.62rem;color:#7A9A80;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Avg Online Spend<br>/User/Year SGD</div></div>
+    </div>
+    <div class="grid grid-cols-2 gap-5 reveal">
+      <div class="card">
+        <div style="font-size:0.75rem;font-weight:700;color:#52B788;margin-bottom:0.8rem;text-transform:uppercase;letter-spacing:0.08em;">TAM → SAM → SOM</div>
+        <div style="display:flex;flex-direction:column;gap:0.55rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.78rem;color:#C8D5C0;">TAM — SG Wellness Market</span><span style="font-size:0.82rem;font-weight:700;color:#F5F0E8;">USD 18.8B</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.78rem;color:#C8D5C0;">SAM — H&amp;B e-commerce SG</span><span style="font-size:0.82rem;font-weight:700;color:#F5F0E8;">USD 1.4B</span></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:0.78rem;color:#C8D5C0;">SOM — Pacific Rim niche (Y3)</span><span style="font-size:0.82rem;font-weight:700;color:#52B788;">USD 42M</span></div>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <div style="font-size:0.75rem;font-weight:700;color:#C9974A;margin-bottom:0.8rem;text-transform:uppercase;letter-spacing:0.08em;">Why Singapore First</div>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;">
+          <div style="font-size:0.76rem;color:#C8D5C0;">→ GDP per capita USD 96,000+ — world's highest</div>
+          <div style="font-size:0.76rem;color:#C8D5C0;">→ 7 in 10 consumers prefer organic/natural products</div>
+          <div style="font-size:0.76rem;color:#C8D5C0;">→ AU/NZ = "Clean, Green & Safe" across all of Asia</div>
+          <div style="font-size:0.76rem;color:#C8D5C0;">→ Gateway to 680M Southeast Asian consumers</div>
+          <div style="font-size:0.76rem;color:#C8D5C0;">→ World-class logistics — 2-day last-mile delivery</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: COMPETITIVE LANDSCAPE -->
+<div class="slide" data-slide="5">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:360px;height:360px;top:-70px;right:-70px;background:#52B788;opacity:0.06;"></div>
+    <div class="blob" style="width:220px;height:220px;bottom:-40px;left:-40px;background:#C9974A;opacity:0.06;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Competitive Landscape</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">No one owns the Pacific Rim wellness space in Singapore</div>
+    <div class="reveal">
+      <table class="comp-table">
+        <thead><tr><th>Competitor</th><th>AU/NZ/CA Multi-Origin</th><th>Premium Curation</th><th>SG-First UX</th><th>Brand Identity</th><th>Local Payment</th></tr></thead>
+        <tbody>
+          <tr><td style="color:#52B788;font-weight:700;">✦ Pura™ (Us)</td><td class="tick">✓ All 3</td><td class="tick">✓ Yes</td><td class="tick">✓ Yes</td><td class="tick">✓ Full System</td><td class="tick">✓ PayNow/GrabPay</td></tr>
+          <tr><td>AHW (ahw.sg)</td><td class="partial">AU only</td><td class="cross">✗ Price-led</td><td class="tick">✓ Yes</td><td class="cross">✗ None</td><td class="partial">Partial</td></tr>
+          <tr><td>iHerb</td><td class="partial">Partial</td><td class="cross">✗ 30K SKUs</td><td class="cross">✗ No</td><td class="cross">✗ None</td><td class="cross">✗ No</td></tr>
+          <tr><td>Guardian / Watsons</td><td class="cross">✗ Minimal</td><td class="cross">✗ Mass market</td><td class="tick">✓ Yes</td><td class="cross">✗ None</td><td class="tick">✓ Yes</td></tr>
+          <tr><td>HealthPost NZ</td><td class="partial">NZ only</td><td class="tick">✓ Yes</td><td class="cross">✗ Overseas</td><td class="cross">✗ None</td><td class="cross">✗ No</td></tr>
+          <tr><td>Shopee / Lazada</td><td class="partial">Fragmented</td><td class="cross">✗ Fakes risk</td><td class="tick">✓ Yes</td><td class="cross">✗ None</td><td class="tick">✓ Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reveal" style="margin-top:1rem;background:rgba(82,183,136,0.08);border:1px solid rgba(82,183,136,0.2);border-radius:10px;padding:0.7rem 1rem;font-size:0.8rem;color:#B7E4C7;">
+      💡 <strong>White space confirmed:</strong> Pura™ is the ONLY player combining multi-origin curation + premium brand identity + Singapore-first UX + local payment rails.
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 6: BUSINESS MODEL -->
+<div class="slide" data-slide="6">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:400px;height:400px;top:-80px;left:-80px;background:#1B4332;opacity:0.15;"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-50px;right:-50px;background:#52B788;opacity:0.08;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Business Model</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Three revenue streams from day one</div>
+    <div class="grid grid-cols-3 gap-4 mb-5 reveal">
+      <div class="card text-center">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem;">🛒</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#52B788;margin-bottom:0.4rem;">D2C E-commerce</div>
+        <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.6;margin-bottom:0.5rem;">Direct sales at 40–60% gross margin. AOV target SGD 85–120. Curated bundles drive basket size.</div>
+        <div style="font-size:0.64rem;color:#7A9A80;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;">Primary · 70% revenue mix</div>
+      </div>
+      <div class="card card-gold text-center">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem;">📦</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#C9974A;margin-bottom:0.4rem;">Wellness Subscriptions</div>
+        <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.6;margin-bottom:0.5rem;">Monthly 'Origin Box' — curated AU/NZ/CA essentials. 5–15% discount vs. single purchase. Predictable MRR.</div>
+        <div style="font-size:0.64rem;color:#7A9A80;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;">Recurring · 20% revenue mix</div>
+      </div>
+      <div class="card card-mint text-center">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem;">🤝</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#B7E4C7;margin-bottom:0.4rem;">Brand Partnerships</div>
+        <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.6;margin-bottom:0.5rem;">Exclusive distribution with AU/NZ/CA brands. Co-marketing, launch events, digital shelf sponsorship.</div>
+        <div style="font-size:0.64rem;color:#7A9A80;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;">B2B · 10% revenue mix</div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4 reveal">
+      <div class="card">
+        <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.6rem;text-transform:uppercase;letter-spacing:0.08em;">Unit Economics (Target Year 1)</div>
+        <div style="display:flex;flex-direction:column;gap:0.38rem;">
+          <div style="display:flex;justify-content:space-between;"><span style="font-size:0.76rem;color:#C8D5C0;">Gross Margin</span><span style="font-size:0.78rem;font-weight:700;color:#52B788;">42–58%</span></div>
+          <div style="display:flex;justify-content:space-between;"><span style="font-size:0.76rem;color:#C8D5C0;">CAC (Blended)</span><span style="font-size:0.78rem;font-weight:700;color:#F5F0E8;">SGD 28–35</span></div>
+          <div style="display:flex;justify-content:space-between;"><span style="font-size:0.76rem;color:#C8D5C0;">LTV (12-month)</span><span style="font-size:0.78rem;font-weight:700;color:#F5F0E8;">SGD 340–420</span></div>
+          <div style="display:flex;justify-content:space-between;"><span style="font-size:0.76rem;color:#C8D5C0;">LTV:CAC Ratio</span><span style="font-size:0.78rem;font-weight:700;color:#52B788;">~12:1</span></div>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <div style="font-size:0.72rem;font-weight:700;color:#C9974A;margin-bottom:0.6rem;text-transform:uppercase;letter-spacing:0.08em;">Growth Flywheel</div>
+        <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.7;">Brand curation → authentic storytelling → trust & repeat purchase → subscription revenue → brand partnership leverage → wider SKU range → more curation. Each loop strengthens the moat.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: GO-TO-MARKET -->
+<div class="slide" data-slide="7">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:380px;height:380px;top:-80px;right:-80px;background:#52B788;opacity:0.07;"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-50px;left:-50px;background:#1B4332;opacity:0.1;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Go-To-Market Strategy</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Community-first, then paid amplification</div>
+    <div class="grid grid-cols-3 gap-4 mb-4 reveal">
+      <div class="card">
+        <div style="font-size:0.62rem;color:#52B788;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Phase 1 · M0–M6</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#F5F0E8;margin-bottom:0.55rem;">🌱 Seed Community</div>
+        <div style="display:flex;flex-direction:column;gap:0.3rem;">
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ Micro-influencers (10K–100K): SG wellness, mum, fitness KOLs</div>
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ AU/NZ/CA expat community groups in Singapore</div>
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ PR launch: Asia-targeted wellness press</div>
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ Waitlist campaign: 2,000 pre-launch sign-ups</div>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <div style="font-size:0.62rem;color:#C9974A;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Phase 2 · M6–M18</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#F5F0E8;margin-bottom:0.55rem;">📈 Growth Engine</div>
+        <div style="display:flex;flex-direction:column;gap:0.3rem;">
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ Meta & TikTok paid: SGD 15K/month budget</div>
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ Google Shopping (AU/NZ brand keywords)</div>
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ Subscription box launch: 'The Origin Box'</div>
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ Corporate wellness partnerships (SG MNCs)</div>
+        </div>
+      </div>
+      <div class="card card-mint">
+        <div style="font-size:0.62rem;color:#B7E4C7;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Phase 3 · M18–M36</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#F5F0E8;margin-bottom:0.55rem;">🌏 SEA Expansion</div>
+        <div style="display:flex;flex-direction:column;gap:0.3rem;">
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ Malaysia & Thailand market entry</div>
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ Retail pop-ups: ION Orchard, VivoCity</div>
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ Private label Pura™ supplements range</div>
+          <div style="font-size:0.72rem;color:#C8D5C0;">→ Wholesale to regional hotel spa channels</div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="background:rgba(82,183,136,0.06);border:1px solid rgba(82,183,136,0.15);border-radius:10px;padding:0.65rem 1rem;font-size:0.76rem;color:#C8D5C0;">
+      🎯 <strong style="color:#52B788;">Primary Target:</strong> SG women 28–45, HHI SGD 8K+/month, health-conscious, digitally native. &nbsp;|&nbsp; <strong style="color:#C9974A;">Secondary:</strong> 68,000+ AU/NZ/CA expats in Singapore seeking familiar brands.
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 8: FINANCIAL PROJECTIONS -->
+<div class="slide" data-slide="8">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:400px;height:400px;top:-80px;right:-80px;background:#52B788;opacity:0.07;"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-50px;left:-50px;background:#C9974A;opacity:0.06;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Financial Projections</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Path to profitability by Month 24</div>
+    <div class="grid grid-cols-4 gap-4 mb-5 reveal">
+      <div class="card text-center"><div style="font-size:1.55rem;font-weight:800;color:#52B788;" class="stat-glow">SGD 1.2M</div><div style="font-size:0.62rem;color:#7A9A80;text-transform:uppercase;margin-top:0.3rem;">Year 1 Revenue</div></div>
+      <div class="card card-gold text-center"><div style="font-size:1.55rem;font-weight:800;color:#C9974A;" class="stat-glow">SGD 4.8M</div><div style="font-size:0.62rem;color:#7A9A80;text-transform:uppercase;margin-top:0.3rem;">Year 2 Revenue</div></div>
+      <div class="card card-mint text-center"><div style="font-size:1.55rem;font-weight:800;color:#B7E4C7;" class="stat-glow">SGD 14M</div><div style="font-size:0.62rem;color:#7A9A80;text-transform:uppercase;margin-top:0.3rem;">Year 3 Revenue</div></div>
+      <div class="card text-center"><div style="font-size:1.55rem;font-weight:800;color:#52B788;" class="stat-glow">18%</div><div style="font-size:0.62rem;color:#7A9A80;text-transform:uppercase;margin-top:0.3rem;">Y3 EBITDA Margin</div></div>
+    </div>
+    <div class="grid grid-cols-2 gap-5 reveal">
+      <div class="card">
+        <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.7rem;text-transform:uppercase;letter-spacing:0.08em;">Revenue Growth (SGD)</div>
+        <div style="display:flex;align-items:flex-end;gap:1rem;height:80px;margin-bottom:0.5rem;">
+          <div style="display:flex;flex-direction:column;align-items:center;flex:1;gap:0.3rem;"><div class="bar-fill" style="width:100%;background:linear-gradient(180deg,#52B788,#1B4332);border-radius:4px 4px 0 0;" data-height="14" data-target-h="14" data-max-h="80">&#8203;</div><div style="font-size:0.62rem;color:#7A9A80;">Y1</div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;flex:1;gap:0.3rem;"><div class="bar-fill" style="width:100%;background:linear-gradient(180deg,#C9974A,#8B6914);border-radius:4px 4px 0 0;" data-height="43" data-target-h="43" data-max-h="80">&#8203;</div><div style="font-size:0.62rem;color:#7A9A80;">Y2</div></div>
+          <div style="display:flex;flex-direction:column;align-items:center;flex:1;gap:0.3rem;"><div class="bar-fill" style="width:100%;background:linear-gradient(180deg,#B7E4C7,#52B788);border-radius:4px 4px 0 0;" data-height="80" data-target-h="80" data-max-h="80">&#8203;</div><div style="font-size:0.62rem;color:#7A9A80;">Y3</div></div>
+        </div>
+        <div style="font-size:0.68rem;color:#7A9A80;">Break-even: Month 22–24 at ~2,800 active customers. Series A target: SGD 3M in Year 2.</div>
+      </div>
+      <div class="card card-gold">
+        <div style="font-size:0.72rem;font-weight:700;color:#C9974A;margin-bottom:0.7rem;text-transform:uppercase;letter-spacing:0.08em;">Key Assumptions</div>
+        <div style="display:flex;flex-direction:column;gap:0.4rem;">
+          <div style="font-size:0.74rem;color:#C8D5C0;">→ 1,800 active customers Y1 → 8,500 Y2 → 22,000 Y3</div>
+          <div style="font-size:0.74rem;color:#C8D5C0;">→ AOV SGD 90 · 35% repeat purchase rate by M12</div>
+          <div style="font-size:0.74rem;color:#C8D5C0;">→ 12% subscription penetration by Year 2</div>
+          <div style="font-size:0.74rem;color:#C8D5C0;">→ 10× revenue growth Y1→Y3 → 5× rev multiple = SGD 70M valuation = ~17× seed</div>
+          <div style="font-size:0.74rem;color:#C8D5C0;">→ Comparable: AHW validated SG at ~SGD 2M ARR with no brand identity</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 9: THE TEAM — SHAHAB -->
+<div class="slide" data-slide="9">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:400px;height:400px;top:-80px;left:-80px;background:#1B4332;opacity:0.18;"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-60px;right:-60px;background:#52B788;opacity:0.07;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">The Team</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Operators who've done it before</div>
+    <div class="grid grid-cols-2 gap-5 reveal">
+      <div class="card" style="border-color:rgba(82,183,136,0.3);">
+        <div style="display:flex;align-items:center;gap:0.9rem;margin-bottom:0.9rem;">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#1B4332,#52B788);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">👨‍💼</div>
+          <div><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;color:#F5F0E8;">Shahab Samimi</div><div style="font-size:0.65rem;color:#52B788;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Co-Founder & CEO</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.45rem;">
+          <div style="background:rgba(82,183,136,0.06);border-left:2px solid #52B788;padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;"><div style="font-size:0.78rem;font-weight:700;color:#52B788;">2× Founder</div><div style="font-size:0.71rem;color:#C8D5C0;">Pura Foods and Northstar Endurance. Built from 0→1 across consumer products and capital markets.</div></div>
+          <div style="background:rgba(201,151,74,0.05);border-left:2px solid #C9974A;padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;"><div style="font-size:0.78rem;font-weight:700;color:#C9974A;">15+ Years Product & Finance</div><div style="font-size:0.71rem;color:#C8D5C0;">Senior PM at Nordstrom & Humanoid Global Holdings. ex-VC at 7 Gate Ventures — seed to pre-Series A.</div></div>
+          <div style="background:rgba(183,228,199,0.05);border-left:2px solid #B7E4C7;padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;"><div style="font-size:0.78rem;font-weight:700;color:#B7E4C7;">AI & Scale</div><div style="font-size:0.71rem;color:#C8D5C0;">Scaled AI-powered products to 30,000+ users with 80% efficiency gains via LLMs and RAG pipelines.</div></div>
+          <div style="background:rgba(82,183,136,0.05);border-left:2px solid #52B788;padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;"><div style="font-size:0.78rem;font-weight:700;color:#52B788;">MBA · Beedie School, SFU</div><div style="font-size:0.71rem;color:#C8D5C0;">Digital transformation expertise. Advisory: Hypercharge Networks, Stay22.</div></div>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <div style="display:flex;align-items:center;gap:0.9rem;margin-bottom:0.9rem;">
+          <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#8B6914,#C9974A);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">👩‍💼</div>
+          <div><div style="font-family:'DM Serif Display',serif;font-size:1.1rem;color:#F5F0E8;">Joan Lim</div><div style="font-size:0.65rem;color:#C9974A;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Co-Founder & Chief Connector</div></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.45rem;">
+          <div style="background:rgba(201,151,74,0.06);border-left:2px solid #C9974A;padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;"><div style="font-size:0.78rem;font-weight:700;color:#C9974A;">Conscious Venture Studio</div><div style="font-size:0.71rem;color:#C8D5C0;">Founder of Vis Magna — Singapore-based venture studio and strategic superconnector across Asia, Canada, and the Middle East.</div></div>
+          <div style="background:rgba(82,183,136,0.05);border-left:2px solid #52B788;padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;"><div style="font-size:0.78rem;font-weight:700;color:#52B788;">20+ Years Real Estate & Finance</div><div style="font-size:0.71rem;color:#C8D5C0;">Residential investments across SG, Canada, UK, Japan, Thailand, Malaysia. Strategic counsel to family offices since 2010.</div></div>
+          <div style="background:rgba(183,228,199,0.05);border-left:2px solid #B7E4C7;padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;"><div style="font-size:0.78rem;font-weight:700;color:#B7E4C7;">54 Countries · Deep SEA Networks</div><div style="font-size:0.71rem;color:#C8D5C0;">Native Singaporean with cross-cultural fluency (EN/ZH/Malay). Direct access to SG business community and family offices.</div></div>
+          <div style="background:rgba(201,151,74,0.05);border-left:2px solid #C9974A;padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;"><div style="font-size:0.78rem;font-weight:700;color:#C9974A;">Vis Magna Pte. Ltd.</div><div style="font-size:0.71rem;color:#C8D5C0;">Active portfolio in real estate, solar EPC, plant-based innovation, and education. 11–50 person team.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 10: FOUNDER-MARKET FIT -->
+<div class="slide" data-slide="10">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:380px;height:380px;top:-70px;right:-70px;background:#52B788;opacity:0.07;"></div>
+    <div class="blob" style="width:240px;height:240px;bottom:-50px;left:-50px;background:#1B4332;opacity:0.12;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Founder-Market Fit</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">This exact problem, solved by the right two people</div>
+    <div class="grid grid-cols-3 gap-4 mb-5 reveal">
+      <div class="card text-center">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem;">🌏</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#52B788;margin-bottom:0.45rem;">Pacific Rim Lived Experience</div>
+        <div style="font-size:0.74rem;color:#C8D5C0;line-height:1.6;">Shahab: Canadian-based, launched Pura Foods consumer brand. Joan: Singapore-native, invested across AU/NZ/CA markets. Together: the exact bridge Pura™ needs.</div>
+      </div>
+      <div class="card card-gold text-center">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem;">🔗</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#C9974A;margin-bottom:0.45rem;">Singapore Network Density</div>
+        <div style="font-size:0.74rem;color:#C8D5C0;line-height:1.6;">Joan's Vis Magna studio provides direct access to SG family offices, wellness KOLs, government agencies, and brand distribution contacts from day one.</div>
+      </div>
+      <div class="card card-mint text-center">
+        <div style="font-size:1.8rem;margin-bottom:0.5rem;">⚙️</div>
+        <div style="font-size:0.88rem;font-weight:700;color:#B7E4C7;margin-bottom:0.45rem;">Execution Capability</div>
+        <div style="font-size:0.74rem;color:#C8D5C0;line-height:1.6;">Shahab's product + tech DNA ensures a world-class digital store, analytics stack, and scalable operations — not a lifestyle project, a funded venture built to scale.</div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-5 reveal">
+      <div class="card">
+        <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">Combined Skills Matrix</div>
+        <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.65;"><strong style="color:#52B788;">Shahab:</strong> product strategy, technology, AI/data, financial modelling, capital markets, investor relations, 0→1 execution, regulatory compliance, digital transformation.<br><br><strong style="color:#C9974A;">Joan:</strong> Singapore & SEA market access, brand partnerships, family office relationships, community building, cross-cultural leadership, real estate & corporate networks.</div>
+      </div>
+      <div class="card card-gold">
+        <div style="font-size:0.72rem;font-weight:700;color:#C9974A;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">Advisory Buildout (Q3 2026)</div>
+        <div style="display:flex;flex-direction:column;gap:0.35rem;">
+          <div style="font-size:0.73rem;color:#C8D5C0;">→ AU/NZ brand distribution specialist</div>
+          <div style="font-size:0.73rem;color:#C8D5C0;">→ Singapore HSA regulatory expert</div>
+          <div style="font-size:0.73rem;color:#C8D5C0;">→ E-commerce operations (ex-Lazada/Shopify SEA)</div>
+          <div style="font-size:0.73rem;color:#C8D5C0;">→ Luxury wellness retail sector advisor</div>
+          <div style="font-size:0.73rem;color:#C8D5C0;">→ Series A institutional investment advisor</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 11: PRODUCT PORTFOLIO -->
+<div class="slide" data-slide="11">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:360px;height:360px;top:-70px;left:-70px;background:#1B4332;opacity:0.18;"></div>
+    <div class="blob" style="width:240px;height:240px;bottom:-50px;right:-50px;background:#52B788;opacity:0.07;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Product Portfolio</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Six categories. Three origins. One trusted destination.</div>
+    <div class="grid grid-cols-3 gap-4 mb-4 reveal" style="grid-template-rows:auto auto;">
+      <div class="card"><div style="font-size:1.3rem;margin-bottom:0.3rem;">🧴</div><div style="font-size:0.85rem;font-weight:700;color:#52B788;margin-bottom:0.3rem;">Skincare</div><div style="font-size:0.72rem;color:#C8D5C0;line-height:1.55;">Sukin, Trilogy, Antipodes, Frank Body — natural, cruelty-free, certified organic. Highest brand recognition in SG.</div></div>
+      <div class="card card-gold"><div style="font-size:1.3rem;margin-bottom:0.3rem;">💊</div><div style="font-size:0.85rem;font-weight:700;color:#C9974A;margin-bottom:0.3rem;">Supplements</div><div style="font-size:0.72rem;color:#C8D5C0;line-height:1.55;">Blackmores, Swisse, Mānuka Health, Nature's Own — all HSA-notifiable. Highest margin category at 48–60%.</div></div>
+      <div class="card card-mint"><div style="font-size:1.3rem;margin-bottom:0.3rem;">☀️</div><div style="font-size:0.85rem;font-weight:700;color:#B7E4C7;margin-bottom:0.3rem;">Sun Care</div><div style="font-size:0.72rem;color:#C8D5C0;line-height:1.55;">Cancer Council AU, Invisible Zinc — ultra-relevant for Singapore's intense UV index. Premium, reef-safe formulations.</div></div>
+      <div class="card card-mint"><div style="font-size:1.3rem;margin-bottom:0.3rem;">👶</div><div style="font-size:0.85rem;font-weight:700;color:#B7E4C7;margin-bottom:0.3rem;">Baby & Family</div><div style="font-size:0.72rem;color:#C8D5C0;line-height:1.55;">Lucas' Papaw, Gaia Natural Baby, Weleda — high-AOV premium parenting segment. Strong gifting potential.</div></div>
+      <div class="card"><div style="font-size:1.3rem;margin-bottom:0.3rem;">🧘</div><div style="font-size:0.85rem;font-weight:700;color:#52B788;margin-bottom:0.3rem;">Wellness</div><div style="font-size:0.72rem;color:#C8D5C0;line-height:1.55;">Mānuka honey, collagen, adaptogens, sleep & probiotic range. Fastest growing segment — 10.5% CAGR in SG.</div></div>
+      <div class="card card-gold"><div style="font-size:1.3rem;margin-bottom:0.3rem;">💇</div><div style="font-size:0.85rem;font-weight:700;color:#C9974A;margin-bottom:0.3rem;">Hair Care</div><div style="font-size:0.72rem;color:#C8D5C0;line-height:1.55;">Akin (AU), Evo (AU), Kevin Murphy — natural, paraben-free, salon-quality. Growing influencer-driven demand in SG.</div></div>
+    </div>
+    <div class="reveal" style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+      <span style="background:rgba(82,183,136,0.1);border:1px solid rgba(82,183,136,0.2);border-radius:30px;padding:0.3rem 0.9rem;font-size:0.72rem;color:#52B788;">🇦🇺 55% SKU mix · TGA-regulated</span>
+      <span style="background:rgba(183,228,199,0.08);border:1px solid rgba(183,228,199,0.2);border-radius:30px;padding:0.3rem 0.9rem;font-size:0.72rem;color:#B7E4C7;">🇳🇿 30% SKU mix · Medsafe</span>
+      <span style="background:rgba(201,151,74,0.08);border:1px solid rgba(201,151,74,0.2);border-radius:30px;padding:0.3rem 0.9rem;font-size:0.72rem;color:#C9974A;">🇨🇦 15% SKU mix · Health Canada</span>
+      <span style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:30px;padding:0.3rem 0.9rem;font-size:0.72rem;color:#7A9A80;">Launch SKU Count: 150 · Year 2 Target: 350+</span>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 12: TRACTION & MILESTONES -->
+<div class="slide" data-slide="12">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:380px;height:380px;top:-70px;right:-70px;background:#52B788;opacity:0.07;"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-50px;left:-50px;background:#C9974A;opacity:0.06;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Traction & Milestones</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Pre-revenue. Fully validated.</div>
+    <div style="position:relative;padding-left:1.5rem;reveal" class="reveal">
+      <div class="timeline-line"></div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#52B788;box-shadow:0 0 8px rgba(82,183,136,0.5);margin-left:-1.5rem;"></div>
+        <div class="card" style="flex:1;margin-bottom:0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.35rem;"><span style="font-size:0.82rem;font-weight:700;color:#52B788;">✅ Market Research & Validation</span><span style="font-size:0.65rem;color:#7A9A80;background:rgba(82,183,136,0.1);padding:0.15rem 0.5rem;border-radius:20px;">Completed</span></div>
+          <div style="font-size:0.73rem;color:#C8D5C0;">Singapore market sizing confirmed (USD 18.8B). 6 competitor audits. 40+ consumer interviews. Full demand validation for Pacific Rim curation model.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#52B788;box-shadow:0 0 8px rgba(82,183,136,0.5);margin-left:-1.5rem;"></div>
+        <div class="card" style="flex:1;margin-bottom:0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.35rem;"><span style="font-size:0.82rem;font-weight:700;color:#52B788;">✅ Brand Identity Built</span><span style="font-size:0.65rem;color:#7A9A80;background:rgba(82,183,136,0.1);padding:0.15rem 0.5rem;border-radius:20px;">Completed</span></div>
+          <div style="font-size:0.73rem;color:#C8D5C0;">Full Pura™ brand system — name (linguistically validated across EN/ZH/Malay/Tamil), logo, palette, typography, voice guide, brand guidelines document. Website MVP built.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#C9974A;box-shadow:0 0 8px rgba(201,151,74,0.4);margin-left:-1.5rem;"></div>
+        <div class="card card-gold" style="flex:1;margin-bottom:0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.35rem;"><span style="font-size:0.82rem;font-weight:700;color:#C9974A;">🔄 Brand Outreach — AU/NZ/CA</span><span style="font-size:0.65rem;color:#C9974A;background:rgba(201,151,74,0.1);padding:0.15rem 0.5rem;border-radius:20px;">In Progress</span></div>
+          <div style="font-size:0.73rem;color:#C8D5C0;">Conversations initiated with Blackmores, Trilogy, Sukin, Antipodes. Targeting 10 signed distribution agreements prior to launch. LOIs expected Q3 2026.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot" style="background:#7A9A80;margin-left:-1.5rem;"></div>
+        <div class="card card-mint" style="flex:1;margin-bottom:0;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.35rem;"><span style="font-size:0.82rem;font-weight:700;color:#B7E4C7;">⬜ Launch — Q4 2026</span><span style="font-size:0.65rem;color:#7A9A80;background:rgba(255,255,255,0.04);padding:0.15rem 0.5rem;border-radius:20px;">Pending Seed</span></div>
+          <div style="font-size:0.73rem;color:#C8D5C0;">SGD 600K seed raise → 3PL onboarding → Shopify Plus platform build → influencer seeding (50 KOLs) → waitlist activation → public launch.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 13: BRAND IDENTITY -->
+<div class="slide" data-slide="13">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:400px;height:400px;top:-80px;right:-80px;background:#1B4332;opacity:0.2;"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-60px;left:-60px;background:#52B788;opacity:0.08;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Brand Identity</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">A brand built to own the premium wellness space in SEA</div>
+    <div class="grid grid-cols-2 gap-5 reveal">
+      <div>
+        <div class="card" style="margin-bottom:0.8rem;">
+          <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">🏷️ Name: Pura™</div>
+          <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.65;">"Pure" in Latin/Spanish/Italian. In Balinese/Indonesian, <em>pura</em> = sacred temple — evoking sanctity across all of SEA. 2 syllables: pronounceable in Mandarin (普拉), Malay, Tamil and English. Strong IPOS trademark position under Class 3 + 5.</div>
+        </div>
+        <div class="card card-mint">
+          <div style="font-size:0.72rem;font-weight:700;color:#B7E4C7;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">✍️ Typography</div>
+          <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.65;"><strong style="color:#F5F0E8;">DM Serif Display</strong> — headings, hero, logo. Warm editorial authority.<br><strong style="color:#F5F0E8;">DM Sans</strong> — body, UI, prices. Ultra-clean, geometric modern.<br>Both are free Google Fonts — zero licensing overhead.<br><br><em style="color:#7A9A80;">Tagline: Pure Origins · Vibrant Living</em></div>
+        </div>
+      </div>
+      <div>
+        <div class="card card-gold" style="margin-bottom:0.8rem;">
+          <div style="font-size:0.72rem;font-weight:700;color:#C9974A;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">🎨 Colour Palette</div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+            <div style="text-align:center;"><div class="swatch" style="background:#52B788;"></div><div style="font-size:0.56rem;color:#7A9A80;margin-top:0.2rem;">Forest Sage</div></div>
+            <div style="text-align:center;"><div class="swatch" style="background:#C9974A;"></div><div style="font-size:0.56rem;color:#7A9A80;margin-top:0.2rem;">Pacific Gold</div></div>
+            <div style="text-align:center;"><div class="swatch" style="background:#B7E4C7;"></div><div style="font-size:0.56rem;color:#7A9A80;margin-top:0.2rem;">Soft Mint</div></div>
+            <div style="text-align:center;"><div class="swatch" style="background:#1B4332;"></div><div style="font-size:0.56rem;color:#7A9A80;margin-top:0.2rem;">Deep Forest</div></div>
+            <div style="text-align:center;"><div class="swatch" style="background:#F8F5EF;border-color:rgba(255,255,255,0.3);"></div><div style="font-size:0.56rem;color:#7A9A80;margin-top:0.2rem;">Warm Cream</div></div>
+            <div style="text-align:center;"><div class="swatch" style="background:#0D1A12;"></div><div style="font-size:0.56rem;color:#7A9A80;margin-top:0.2rem;">Deep Forest BG</div></div>
+          </div>
+          <div style="font-size:0.68rem;color:#7A9A80;">All primary combinations meet WCAG 2.1 AA contrast (Deep Forest on Cream = 8.2:1). Inspired by AU wilderness, NZ forests, CA mineral landscapes.</div>
+        </div>
+        <div class="card">
+          <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">🗣️ Brand Voice</div>
+          <div style="display:flex;flex-direction:column;gap:0.3rem;">
+            <div style="font-size:0.73rem;color:#C8D5C0;">→ Warm but evidence-informed — never unsubstantiated claims</div>
+            <div style="font-size:0.73rem;color:#C8D5C0;">→ Quietly confident — authoritative without arrogance</div>
+            <div style="font-size:0.73rem;color:#C8D5C0;">→ Culturally aware — SG + AU/NZ/CA sensibilities</div>
+            <div style="font-size:0.73rem;color:#C8D5C0;">→ Sustainably minded without preachiness</div>
+            <div style="font-size:0.73rem;color:#C8D5C0;">→ Premium without exclusivity</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 14: REGULATORY & RISK -->
+<div class="slide" data-slide="14">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:380px;height:380px;top:-70px;left:-70px;background:#52B788;opacity:0.07;"></div>
+    <div class="blob" style="width:250px;height:250px;bottom:-50px;right:-50px;background:#C9974A;opacity:0.06;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Regulatory & Risk</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Regulatory clarity is a competitive advantage</div>
+    <div class="grid grid-cols-2 gap-5 reveal">
+      <div>
+        <div class="card" style="margin-bottom:0.8rem;">
+          <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">🏥 Singapore HSA Framework</div>
+          <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.65;">All health supplements must be HSA-notified before sale in Singapore. Pura™ sources exclusively from brands with AU TGA, NZ Medsafe, or Health Canada approvals — the world's highest regulatory bar — ensuring smooth HSA notification and maximum consumer trust.</div>
+        </div>
+        <div class="card card-mint">
+          <div style="font-size:0.72rem;font-weight:700;color:#B7E4C7;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">🔒 Legal Structure</div>
+          <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.65;"><strong style="color:#F5F0E8;">Pura Pte. Ltd.</strong> (ACRA, Singapore).<br>IPOS trademark filed: Class 3 (cosmetics) + Class 5 (supplements).<br>PDPA-compliant from Day 1: DPO appointed, consent management built in.<br>Import permit for health supplements from first shipment.</div>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <div style="font-size:0.72rem;font-weight:700;color:#C9974A;margin-bottom:0.7rem;text-transform:uppercase;letter-spacing:0.08em;">⚠️ Key Risks & Mitigations</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <div style="border-left:2px solid rgba(201,151,74,0.4);padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;background:rgba(201,151,74,0.04);"><div style="font-size:0.78rem;font-weight:700;color:#F5F0E8;">FX Risk</div><div style="font-size:0.7rem;color:#C8D5C0;">SGD/AUD/NZD/CAD exposure hedged via 90-day forward contracts on large orders.</div></div>
+          <div style="border-left:2px solid rgba(201,151,74,0.4);padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;background:rgba(201,151,74,0.04);"><div style="font-size:0.78rem;font-weight:700;color:#F5F0E8;">Inventory Risk</div><div style="font-size:0.7rem;color:#C8D5C0;">Asset-light consignment model for first 12 months, minimising dead stock exposure.</div></div>
+          <div style="border-left:2px solid rgba(201,151,74,0.4);padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;background:rgba(201,151,74,0.04);"><div style="font-size:0.78rem;font-weight:700;color:#F5F0E8;">Competition</div><div style="font-size:0.7rem;color:#C8D5C0;">AHW adds NZ/CA → Pura™'s brand identity moat and community is the durable differentiator.</div></div>
+          <div style="border-left:2px solid rgba(201,151,74,0.4);padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;background:rgba(201,151,74,0.04);"><div style="font-size:0.78rem;font-weight:700;color:#F5F0E8;">Regulatory Change</div><div style="font-size:0.7rem;color:#C8D5C0;">HSA supplement category well-established. Pura™ does not sell Rx or controlled products.</div></div>
+          <div style="border-left:2px solid rgba(201,151,74,0.4);padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;background:rgba(201,151,74,0.04);"><div style="font-size:0.78rem;font-weight:700;color:#F5F0E8;">Supplier Dependency</div><div style="font-size:0.7rem;color:#C8D5C0;">Diversified across 20+ brand partners in Year 1 — no single brand exceeding 15% of revenue.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 15: THE ASK -->
+<div class="slide" data-slide="15">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:420px;height:420px;top:-80px;left:-80px;background:#1B4332;opacity:0.2;"></div>
+    <div class="blob" style="width:280px;height:280px;bottom:-60px;right:-60px;background:#C9974A;opacity:0.08;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">The Ask</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Raising SGD 600,000 Seed Round</div>
+    <div class="reveal" style="background:linear-gradient(135deg,rgba(82,183,136,0.1),rgba(27,67,50,0.2));border:1px solid rgba(82,183,136,0.3);border-radius:12px;padding:0.75rem 1.2rem;margin-bottom:1rem;text-align:center;font-size:0.85rem;color:#B7E4C7;font-weight:600;">
+      SGD 600,000 Seed &nbsp;·&nbsp; Pre-money Valuation: SGD 2.4M &nbsp;·&nbsp; 20% Equity &nbsp;·&nbsp; SAFE Note (MFN) &nbsp;·&nbsp; Min. Ticket: SGD 25,000
+    </div>
+    <div class="grid grid-cols-2 gap-5 reveal">
+      <div class="card">
+        <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.7rem;text-transform:uppercase;letter-spacing:0.08em;">Use of Funds — SGD 600K</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.75rem;color:#C8D5C0;">Initial Inventory (150 SKUs, 90-day)</span><span style="font-size:0.75rem;font-weight:700;color:#F5F0E8;">SGD 180K (30%)</span></div>
+            <div class="bar-track" style="height:5px;"><div class="bar-fill" data-width="30" style="height:100%;background:linear-gradient(90deg,#52B788,#B7E4C7);width:0%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.75rem;color:#C8D5C0;">Marketing & Launch</span><span style="font-size:0.75rem;font-weight:700;color:#F5F0E8;">SGD 150K (25%)</span></div>
+            <div class="bar-track" style="height:5px;"><div class="bar-fill" data-width="25" style="height:100%;background:linear-gradient(90deg,#C9974A,#F5D5A0);width:0%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.75rem;color:#C8D5C0;">Team (2 FTE)</span><span style="font-size:0.75rem;font-weight:700;color:#F5F0E8;">SGD 120K (20%)</span></div>
+            <div class="bar-track" style="height:5px;"><div class="bar-fill" data-width="20" style="height:100%;background:linear-gradient(90deg,#B7E4C7,#52B788);width:0%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.75rem;color:#C8D5C0;">Technology & Platform (Shopify Plus)</span><span style="font-size:0.75rem;font-weight:700;color:#F5F0E8;">SGD 80K (13%)</span></div>
+            <div class="bar-track" style="height:5px;"><div class="bar-fill" data-width="13" style="height:100%;background:linear-gradient(90deg,#52B788,#1B4332);width:0%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.75rem;color:#C8D5C0;">Working Capital</span><span style="font-size:0.75rem;font-weight:700;color:#F5F0E8;">SGD 40K (7%)</span></div>
+            <div class="bar-track" style="height:5px;"><div class="bar-fill" data-width="7" style="height:100%;background:linear-gradient(90deg,#C9974A,#8B6914);width:0%;"></div></div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.75rem;color:#C8D5C0;">Legal & Compliance (IPOS)</span><span style="font-size:0.75rem;font-weight:700;color:#F5F0E8;">SGD 30K (5%)</span></div>
+            <div class="bar-track" style="height:5px;"><div class="bar-fill" data-width="5" style="height:100%;background:linear-gradient(90deg,#B7E4C7,#52B788);width:0%;"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card card-gold" style="margin-bottom:0.8rem;">
+          <div style="font-size:0.72rem;font-weight:700;color:#C9974A;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">18-Month Milestones</div>
+          <div style="display:flex;flex-direction:column;gap:0.38rem;">
+            <div style="font-size:0.73rem;color:#C8D5C0;"><strong style="color:#F5F0E8;">M0–M3:</strong> Brand launch, 10 signed brand agreements, 150 SKU live, waitlist activation.</div>
+            <div style="font-size:0.73rem;color:#C8D5C0;"><strong style="color:#F5F0E8;">M3–M9:</strong> 2,000 active customers, SGD 35K MRR, subscription box launch.</div>
+            <div style="font-size:0.73rem;color:#C8D5C0;"><strong style="color:#F5F0E8;">M9–M18:</strong> 5,000 customers, SGD 100K MRR, Series A deck ready.</div>
+          </div>
+        </div>
+        <div class="card" style="background:linear-gradient(135deg,rgba(82,183,136,0.06),rgba(27,67,50,0.1));">
+          <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">Return Scenario</div>
+          <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.65;">10× revenue growth Y1→Y3 at 5× revenue multiple = <strong style="color:#52B788;">SGD 70M valuation</strong> = approximately <strong style="color:#52B788;">17× seed return</strong> on a SGD 600K investment. Series A targeted at SGD 3M in Year 2 for SEA expansion.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 16: SEA EXPANSION -->
+<div class="slide" data-slide="16">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:400px;height:400px;top:-80px;right:-80px;background:#52B788;opacity:0.07;"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-60px;left:-60px;background:#1B4332;opacity:0.14;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">SEA Expansion Vision</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Singapore is the beachhead. SEA is the prize.</div>
+    <div class="grid grid-cols-3 gap-4 mb-5 reveal">
+      <div class="card">
+        <div style="font-size:1.6rem;margin-bottom:0.4rem;">🇸🇬</div>
+        <div style="font-size:0.62rem;color:#52B788;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.3rem;">Wave 1 · Y1–Y2</div>
+        <div style="font-size:0.92rem;font-weight:700;color:#F5F0E8;margin-bottom:0.45rem;">Singapore</div>
+        <div style="font-size:0.72rem;color:#C8D5C0;line-height:1.6;">Full D2C launch. Build LTV data and distribution playbook. Achieve SGD 4.8M GMV. Establish brand trust with 5,000+ loyalty members.</div>
+      </div>
+      <div class="card card-gold">
+        <div style="font-size:1.6rem;margin-bottom:0.4rem;">🇲🇾🇹🇭</div>
+        <div style="font-size:0.62rem;color:#C9974A;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.3rem;">Wave 2 · Y2–Y3</div>
+        <div style="font-size:0.92rem;font-weight:700;color:#F5F0E8;margin-bottom:0.45rem;">Malaysia + Thailand</div>
+        <div style="font-size:0.72rem;color:#C8D5C0;line-height:1.6;">Clone the SG playbook. 42M+ combined middle-class consumers. AU/NZ brand perception is equally strong in KL and Bangkok.</div>
+      </div>
+      <div class="card card-mint">
+        <div style="font-size:1.6rem;margin-bottom:0.4rem;">🇵🇭🇻🇳🇮🇩</div>
+        <div style="font-size:0.62rem;color:#B7E4C7;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.3rem;">Wave 3 · Y3–Y5</div>
+        <div style="font-size:0.92rem;font-weight:700;color:#F5F0E8;margin-bottom:0.45rem;">PH + VN + ID</div>
+        <div style="font-size:0.72rem;color:#C8D5C0;line-height:1.6;">880M+ population. Fast-growing upper-middle class. Marketplace + local D2C hybrid. Private label Pura™ range maximises margins.</div>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4 reveal">
+      <div class="card">
+        <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">🏬 Omnichannel by Y2</div>
+        <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.6;">Pop-up retail at ION Orchard, VivoCity, Jewel Changi Airport. Hotel spa wholesale: Raffles, Marina Bay Sands, Park Hyatt. Corporate wellness programmes for Singapore MNCs.</div>
+      </div>
+      <div class="card card-gold">
+        <div style="font-size:0.72rem;font-weight:700;color:#C9974A;margin-bottom:0.5rem;text-transform:uppercase;letter-spacing:0.08em;">🏷️ Private Label by Y3</div>
+        <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.6;">Launch Pura™ private label supplements (collagen, mānuka, probiotics) co-manufactured in AU/NZ. Target 65–72% gross margin. Builds defensible brand asset for exit.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 17: WHY NOW -->
+<div class="slide" data-slide="17">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:380px;height:380px;top:-70px;left:-70px;background:#1B4332;opacity:0.18;"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-50px;right:-50px;background:#52B788;opacity:0.08;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Why Now</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">Four macro tailwinds converging in 2026</div>
+    <div class="grid grid-cols-2 gap-5 reveal">
+      <div class="card">
+        <div style="display:flex;gap:0.8rem;align-items:flex-start;">
+          <div style="font-size:1.6rem;flex-shrink:0;">📈</div>
+          <div><div style="font-size:0.88rem;font-weight:700;color:#52B788;margin-bottom:0.35rem;">Post-COVID Wellness Boom</div><div style="font-size:0.73rem;color:#C8D5C0;line-height:1.6;">SG wellness growing at 9.5% CAGR through 2034. 70% of consumers now actively managing preventative health vs. 41% in 2019. Natural & organic personal care growing at 10.5% CAGR specifically in Singapore.</div></div>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <div style="display:flex;gap:0.8rem;align-items:flex-start;">
+          <div style="font-size:1.6rem;flex-shrink:0;">🚫</div>
+          <div><div style="font-size:0.88rem;font-weight:700;color:#C9974A;margin-bottom:0.35rem;">Platform Authenticity Crisis</div><div style="font-size:0.73rem;color:#C8D5C0;line-height:1.6;">HSA and Singapore authorities removed 7,000+ fake or non-compliant health product listings from Shopee & Lazada in 2024 alone. Demand for a trusted, curated, verified source has never been higher.</div></div>
+        </div>
+      </div>
+      <div class="card card-mint">
+        <div style="display:flex;gap:0.8rem;align-items:flex-start;">
+          <div style="font-size:1.6rem;flex-shrink:0;">🌿</div>
+          <div><div style="font-size:0.88rem;font-weight:700;color:#B7E4C7;margin-bottom:0.35rem;">Natural Beauty Surge</div><div style="font-size:0.73rem;color:#C8D5C0;line-height:1.6;">Natural & organic personal care growing 10.5% CAGR in Singapore through 2033 — outpacing the overall beauty market by 3× due to Gen-Z and Millennial health consciousness shift.</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="display:flex;gap:0.8rem;align-items:flex-start;">
+          <div style="font-size:1.6rem;flex-shrink:0;">🤝</div>
+          <div><div style="font-size:0.88rem;font-weight:700;color:#52B788;margin-bottom:0.35rem;">Brand Supply Readiness</div><div style="font-size:0.73rem;color:#C8D5C0;line-height:1.6;">AU/NZ/CA wellness brands are actively seeking Asia-Pacific distribution partnerships in 2026. No incumbent with the right brand profile and Singapore-native capabilities exists in the market.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 18: VISION & EXIT -->
+<div class="slide" data-slide="18">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:400px;height:400px;top:-80px;right:-80px;background:#52B788;opacity:0.07;"></div>
+    <div class="blob" style="width:280px;height:280px;bottom:-60px;left:-60px;background:#C9974A;opacity:0.07;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Vision & Exit</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">The Sephora of Pacific Rim wellness in Southeast Asia</div>
+    <div class="grid grid-cols-2 gap-5 mb-4 reveal">
+      <div class="card">
+        <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.7rem;text-transform:uppercase;letter-spacing:0.08em;">🎯 5-Year Vision</div>
+        <div style="display:flex;flex-direction:column;gap:0.38rem;">
+          <div style="font-size:0.76rem;color:#C8D5C0;">→ SGD 80M+ GMV across 6 SEA markets</div>
+          <div style="font-size:0.76rem;color:#C8D5C0;">→ 100+ exclusive brand distribution agreements</div>
+          <div style="font-size:0.76rem;color:#C8D5C0;">→ Pura™ Private Label — 25% revenue, 68% margin</div>
+          <div style="font-size:0.76rem;color:#C8D5C0;">→ 500K+ loyalty members across SEA</div>
+          <div style="font-size:0.76rem;color:#C8D5C0;">→ Omnichannel — 5 pop-up/permanent locations</div>
+        </div>
+      </div>
+      <div class="card card-gold">
+        <div style="font-size:0.72rem;font-weight:700;color:#C9974A;margin-bottom:0.7rem;text-transform:uppercase;letter-spacing:0.08em;">🚪 Exit Pathways</div>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;">
+          <div style="border-left:2px solid #52B788;padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;background:rgba(82,183,136,0.04);"><div style="font-size:0.78rem;font-weight:700;color:#52B788;">Strategic Acquisition</div><div style="font-size:0.7rem;color:#C8D5C0;">AU/NZ FMCG conglomerate (Blackmores, A2 Milk), SEA platform (Grab, Sea Limited), or global beauty retailer seeking SEA distribution footprint.</div></div>
+          <div style="border-left:2px solid #B7E4C7;padding:0.4rem 0.6rem;border-radius:0 6px 6px 0;background:rgba(183,228,199,0.04);"><div style="font-size:0.78rem;font-weight:700;color:#B7E4C7;">IPO — SGX Catalist</div><div style="font-size:0.7rem;color:#C8D5C0;">Singapore Exchange listing at SGD 100M+ market cap. Viable at Y5+ with strong SEA revenue diversification and private label segment.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="background:rgba(82,183,136,0.06);border:1px solid rgba(82,183,136,0.18);border-radius:12px;padding:0.85rem 1.2rem;text-align:center;">
+      <div style="font-size:0.85rem;color:#B7E4C7;font-style:italic;line-height:1.7;">"The trust that Singapore consumers extend to a brand that curates the world's cleanest wellness products is not a small thing — it is a durable, scalable moat."</div>
+      <div style="font-size:0.65rem;color:#7A9A80;margin-top:0.4rem;letter-spacing:0.08em;text-transform:uppercase;">Pura™ Investment Thesis</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 19: USE OF FUNDS (DETAILED) -->
+<div class="slide" data-slide="19">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:380px;height:380px;top:-70px;left:-70px;background:#1B4332;opacity:0.18;"></div>
+    <div class="blob" style="width:260px;height:260px;bottom:-50px;right:-50px;background:#52B788;opacity:0.07;"></div>
+  </div>
+  <div class="content">
+    <div class="eyebrow reveal">Use of Funds</div>
+    <div class="accent-bar reveal"></div>
+    <div class="slide-heading reveal">SGD 600K deployed across 6 buckets over 18 months</div>
+    <div class="grid grid-cols-2 gap-5 reveal">
+      <div class="card">
+        <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.7rem;text-transform:uppercase;letter-spacing:0.08em;">Budget Allocation</div>
+        <div style="display:flex;flex-direction:column;gap:0.55rem;">
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.74rem;color:#C8D5C0;">Initial Inventory</span><span style="font-size:0.74rem;font-weight:700;color:#52B788;">SGD 180K · 30%</span></div>
+            <div class="bar-track" style="height:8px;"><div class="bar-fill" data-width="30" style="height:100%;background:linear-gradient(90deg,#52B788,#B7E4C7);width:0%;border-radius:4px;"></div></div>
+            <div style="font-size:0.65rem;color:#7A9A80;margin-top:0.1rem;">150 SKUs, 90-day stock, AU/NZ/CA sourcing</div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.74rem;color:#C8D5C0;">Marketing & Launch</span><span style="font-size:0.74rem;font-weight:700;color:#C9974A;">SGD 150K · 25%</span></div>
+            <div class="bar-track" style="height:8px;"><div class="bar-fill" data-width="25" style="height:100%;background:linear-gradient(90deg,#C9974A,#F5D5A0);width:0%;border-radius:4px;"></div></div>
+            <div style="font-size:0.65rem;color:#7A9A80;margin-top:0.1rem;">Influencer, paid social, PR, launch events</div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.74rem;color:#C8D5C0;">Team (2 FTE, 18 months)</span><span style="font-size:0.74rem;font-weight:700;color:#B7E4C7;">SGD 120K · 20%</span></div>
+            <div class="bar-track" style="height:8px;"><div class="bar-fill" data-width="20" style="height:100%;background:linear-gradient(90deg,#B7E4C7,#52B788);width:0%;border-radius:4px;"></div></div>
+            <div style="font-size:0.65rem;color:#7A9A80;margin-top:0.1rem;">Operations manager + content/community lead</div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.74rem;color:#C8D5C0;">Technology & Platform</span><span style="font-size:0.74rem;font-weight:700;color:#52B788;">SGD 80K · 13%</span></div>
+            <div class="bar-track" style="height:8px;"><div class="bar-fill" data-width="13" style="height:100%;background:linear-gradient(90deg,#52B788,#1B4332);width:0%;border-radius:4px;"></div></div>
+            <div style="font-size:0.65rem;color:#7A9A80;margin-top:0.1rem;">Shopify Plus, integrations, analytics stack</div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.74rem;color:#C8D5C0;">Working Capital</span><span style="font-size:0.74rem;font-weight:700;color:#C9974A;">SGD 40K · 7%</span></div>
+            <div class="bar-track" style="height:8px;"><div class="bar-fill" data-width="7" style="height:100%;background:linear-gradient(90deg,#C9974A,#8B6914);width:0%;border-radius:4px;"></div></div>
+            <div style="font-size:0.65rem;color:#7A9A80;margin-top:0.1rem;">Contingency, FX buffer</div>
+          </div>
+          <div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:0.2rem;"><span style="font-size:0.74rem;color:#C8D5C0;">Legal & Compliance</span><span style="font-size:0.74rem;font-weight:700;color:#B7E4C7;">SGD 30K · 5%</span></div>
+            <div class="bar-track" style="height:8px;"><div class="bar-fill" data-width="5" style="height:100%;background:linear-gradient(90deg,#B7E4C7,#52B788);width:0%;border-radius:4px;"></div></div>
+            <div style="font-size:0.65rem;color:#7A9A80;margin-top:0.1rem;">IPOS trademark, PDPA, distribution agreements</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card card-gold" style="margin-bottom:0.8rem;">
+          <div style="font-size:0.72rem;font-weight:700;color:#C9974A;margin-bottom:0.6rem;text-transform:uppercase;letter-spacing:0.08em;">Investment Terms</div>
+          <div style="display:flex;flex-direction:column;gap:0.35rem;">
+            <div style="display:flex;justify-content:space-between;"><span style="font-size:0.76rem;color:#C8D5C0;">Instrument</span><span style="font-size:0.76rem;font-weight:700;color:#F5F0E8;">SAFE Note (MFN)</span></div>
+            <div style="display:flex;justify-content:space-between;"><span style="font-size:0.76rem;color:#C8D5C0;">Pre-money Valuation</span><span style="font-size:0.76rem;font-weight:700;color:#F5F0E8;">SGD 2.4M</span></div>
+            <div style="display:flex;justify-content:space-between;"><span style="font-size:0.76rem;color:#C8D5C0;">Raise Amount</span><span style="font-size:0.76rem;font-weight:700;color:#52B788;">SGD 600K</span></div>
+            <div style="display:flex;justify-content:space-between;"><span style="font-size:0.76rem;color:#C8D5C0;">Equity Offered</span><span style="font-size:0.76rem;font-weight:700;color:#F5F0E8;">20%</span></div>
+            <div style="display:flex;justify-content:space-between;"><span style="font-size:0.76rem;color:#C8D5C0;">Minimum Ticket</span><span style="font-size:0.76rem;font-weight:700;color:#C9974A;">SGD 25,000</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-size:0.72rem;font-weight:700;color:#52B788;margin-bottom:0.6rem;text-transform:uppercase;letter-spacing:0.08em;">Series A Roadmap</div>
+          <div style="font-size:0.73rem;color:#C8D5C0;line-height:1.7;">Targeting SGD 3M Series A in Year 2 for SEA expansion into Malaysia and Thailand. Seed investors receive pro-rata rights at Series A. Exit target: SGD 70M+ valuation at Y3–Y4 via strategic acquisition or SGX Catalist IPO.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 20: CLOSING -->
+<div class="slide" data-slide="20" style="background:#060c07;">
+  <div class="gradient-mesh">
+    <div class="blob" style="width:550px;height:550px;top:-100px;left:-100px;background:#1B4332;opacity:0.3;"></div>
+    <div class="blob" style="width:350px;height:350px;bottom:-80px;right:-80px;background:#52B788;opacity:0.12;"></div>
+    <div class="blob" style="width:200px;height:200px;top:40%;right:10%;background:#C9974A;opacity:0.08;"></div>
+  </div>
+  <canvas class="particle-canvas" style="position:absolute;inset:0;z-index:1;"></canvas>
+  <div class="content text-center" style="z-index:2;">
+    <div class="reveal" style="font-size:clamp(3rem,7vw,5.5rem);font-family:'DM Serif Display',serif;background:linear-gradient(135deg,#52B788,#B7E4C7,#52B788);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.02em;margin-bottom:0.3rem;">Pura™</div>
+    <div class="reveal" style="font-size:clamp(0.8rem,1.4vw,1.1rem);color:#7A9A80;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2.5rem;">Let's build the future of Pacific Rim wellness together</div>
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:620px;margin:0 auto 2rem;">
+      <div class="card text-left">
+        <div style="font-size:0.68rem;color:#52B788;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">👨‍💼 Shahab Samimi</div>
+        <div style="font-size:0.72rem;color:#C8D5C0;">Co-Founder & CEO</div>
+        <div style="font-size:0.7rem;color:#7A9A80;margin-top:0.2rem;">shahab@pura.sg</div>
+        <div style="font-size:0.68rem;color:#7A9A80;">about.me/shahabsamimi</div>
+      </div>
+      <div class="card card-gold text-left">
+        <div style="font-size:0.68rem;color:#C9974A;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">👩‍💼 Joan Lim</div>
+        <div style="font-size:0.72rem;color:#C8D5C0;">Co-Founder & Chief Connector</div>
+        <div style="font-size:0.7rem;color:#7A9A80;margin-top:0.2rem;">joan@pura.sg</div>
+        <div style="font-size:0.68rem;color:#7A9A80;">thevismagna.com</div>
+      </div>
+    </div>
+    <div class="reveal" style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+      <span style="background:rgba(82,183,136,0.1);border:1px solid rgba(82,183,136,0.25);border-radius:40px;padding:0.4rem 1rem;font-size:0.78rem;color:#52B788;font-weight:600;">SGD 600K Seed</span>
+      <span style="background:rgba(201,151,74,0.1);border:1px solid rgba(201,151,74,0.25);border-radius:40px;padding:0.4rem 1rem;font-size:0.78rem;color:#C9974A;font-weight:600;">20% Equity</span>
+      <span style="background:rgba(183,228,199,0.08);border:1px solid rgba(183,228,199,0.2);border-radius:40px;padding:0.4rem 1rem;font-size:0.78rem;color:#B7E4C7;font-weight:600;">SAFE Note (MFN)</span>
+      <span style="background:rgba(82,183,136,0.08);border:1px solid rgba(82,183,136,0.18);border-radius:40px;padding:0.4rem 1rem;font-size:0.78rem;color:#7A9A80;">pura.sg</span>
+    </div>
+  </div>
+</div>
+
+</div><!-- .deck -->
+
+<div class="nav-controls">
+  <button class="nav-btn" onclick="changeSlide(-1)">&#8249;</button>
+  <div class="slide-dots" id="dots"></div>
+  <button class="nav-btn" onclick="changeSlide(1)">&#8250;</button>
+  <span class="slide-counter" id="counter">1 / 20</span>
+</div>
+
+<script>
+let current=1;
+const total=document.querySelectorAll('.slide').length;
+const dotsC=document.getElementById('dots');
+const counter=document.getElementById('counter');
+for(let i=1;i<=total;i++){const d=document.createElement('div');d.className='dot'+(i===1?' active':'');d.onclick=()=>goToSlide(i);dotsC.appendChild(d);}
+function goToSlide(n){
+  const prev=document.querySelector('.slide.active');
+  const next=document.querySelector(`.slide[data-slide="${n}"]`);
+  if(prev)prev.classList.remove('active');
+  if(next){next.classList.add('active');animateSlide(next);}
+  current=n;updateNav();
+}
+function changeSlide(dir){let n=current+dir;if(n<1)n=total;if(n>total)n=1;goToSlide(n);}
+function updateNav(){document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i+1===current));counter.textContent=current+' / '+total;}
+document.addEventListener('keydown',(e)=>{if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();changeSlide(1);}if(e.key==='ArrowLeft'){e.preventDefault();changeSlide(-1);}});
+let touchX=0;
+document.addEventListener('touchstart',(e)=>{touchX=e.touches[0].clientX;});
+document.addEventListener('touchend',(e)=>{const d=touchX-e.changedTouches[0].clientX;if(Math.abs(d)>50)changeSlide(d>0?1:-1);});
+function animateSlide(slide){
+  slide.querySelectorAll('.reveal').forEach((el,i)=>{
+    el.style.transition='none';el.style.opacity='0';el.style.transform='translateY(18px)';
+    el.offsetHeight;
+    const delay=i*0.07;
+    el.style.transition=`opacity 0.35s ease ${delay}s,transform 0.35s ease ${delay}s`;
+    el.style.opacity='1';el.style.transform='translateY(0)';
+  });
+  animateEffects(slide);
+}
+function animateEffects(slide){
+  slide.querySelectorAll('[data-count]:not(.counted)').forEach(el=>{
+    el.classList.add('counted');
+    const target=parseInt(el.dataset.count),suf=el.dataset.suffix||'',pre=el.dataset.prefix||'';
+    let cur=0;const step=target/40;
+    const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t);}el.textContent=pre+Math.round(cur).toLocaleString()+suf;},30);
+  });
+  slide.querySelectorAll('.bar-fill[data-width]:not(.fill-init)').forEach((bar,i)=>{
+    bar.classList.add('fill-init');
+    bar.style.width='0%';bar.style.transition=`width 0.7s ease ${i*0.1}s`;
+    bar.offsetHeight;bar.style.width=bar.dataset.width+'%';
+  });
+}
+document.addEventListener('mousemove',(e)=>{
+  const s=document.querySelector('.mouse-spotlight');
+  if(s)s.style.background=`radial-gradient(600px circle at ${e.clientX}px ${e.clientY}px,rgba(82,183,136,0.055),transparent 40%)`;
+});
+window.initParticles=function(canvas,opts){
+  if(!canvas)return;
+  const ctx=canvas.getContext('2d');
+  canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;
+  const cnt=opts.count||55;const inter=opts.interactive!==false;
+  let mx=-1000,my=-1000;
+  const pts=Array.from({length:cnt},()=>({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-0.5)*0.3,vy:(Math.random()-0.5)*0.3,size:Math.random()*2+0.8,alpha:Math.random()*0.3+0.1}));
+  if(inter){canvas.addEventListener('mousemove',(e)=>{const r=canvas.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;});canvas.addEventListener('mouseleave',()=>{mx=-1000;my=-1000;});}
+  (function tick(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    pts.forEach(p=>{
+      if(inter){const dx=p.x-mx,dy=p.y-my,d=Math.sqrt(dx*dx+dy*dy);if(d<120){const f=(120-d)/120*2;p.vx+=(dx/d)*f*0.1;p.vy+=(dy/d)*f*0.1;}}
+      p.vx*=0.98;p.vy*=0.98;p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=canvas.width;if(p.x>canvas.width)p.x=0;
+      if(p.y<0)p.y=canvas.height;if(p.y>canvas.height)p.y=0;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+      ctx.fillStyle=`rgba(82,183,136,${p.alpha})`;ctx.fill();
+    });
+    requestAnimationFrame(tick);
+  })();
+};
+document.querySelectorAll('.particle-canvas').forEach(c=>window.initParticles(c,{interactive:true,count:55}));
+try{animateSlide(document.querySelector('.slide.active'));}catch(e){}
+</script>
+</body>
+</html>
